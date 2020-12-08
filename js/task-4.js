@@ -1,4 +1,4 @@
-const orderPieces = 4;
+const orderPieces = Number(prompt());
 
 const credits = 23580;
 const pricePerDroid = 3000;
@@ -14,7 +14,11 @@ if (orderPieces === null) {
   message = CANCELED_BY_USER;
 } else if (balanceCredit >= 0) {
   message = `Вы купили ${orderPieces} дроидов, на счету осталось ${balanceCredit} кредитов`;
-} else {
+}
+else if (orderPieces !== Number) {
+  message = `Введено не число`;
+}
+else {
   message = ACCESS_DENIED;
 }
 
