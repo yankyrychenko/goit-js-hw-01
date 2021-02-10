@@ -1,13 +1,14 @@
 let total = 0;
-const inputRef = document.querySelector(`.task-six .input `);
-const buttonSubmitRef = document.querySelector(`.task-six .submit`);
-const buttonExitRef = document.querySelector(`.task-six .exit`);
+let input = prompt('Number you add will count to summary');
 
-buttonSubmitRef.addEventListener(`click`, () => {
-  let input = Number(inputRef.value);
-  total += input;
-});
+while (input !== null) {
+  if (isNaN(input)) {
+    console.log('Было введено не число, попробуйте еще раз');
+  } else {
+    total += Number(input);
+  }
 
-buttonExitRef.addEventListener(`click`, () => {
-    console.log(`Общая сумма чисел равна ${total}`);
-});
+  input = prompt('Number you add will count to summary');
+}
+
+console.log(`Общая сумма чисел равна ${total}`);
